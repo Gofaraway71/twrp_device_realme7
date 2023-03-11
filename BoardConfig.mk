@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/xiaomi/begonia
+DEVICE_PATH := device/realme/RMX2151
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
