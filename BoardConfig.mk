@@ -41,9 +41,7 @@ BOARD_AVB_RECOVERY_ADD_HASH_FOOTER_ARGS += \
 TARGET_BOOTLOADER_BOARD_NAME := mt6785
 TARGET_NO_BOOTLOADER := true
 
-# File # File systems
-
-#
+# File systems
 
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 102760448
 #BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
@@ -103,6 +101,7 @@ TW_USE_FSCRYPT_POLICY := 1
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_RECOVERY_DEVICE_DIRS += $(DEVICE_PATH)
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
+
 # TWRP Configuration
 RECOVERY_SDCARD_ON_DATA := true
 TW_DEVICE_VERSION := 4
@@ -123,7 +122,6 @@ TW_INCLUDE_REPACKTOOLS := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_CUSTOM_CPU_TEMP_PATH := /sys/class/power_supply/battery/temp
 TW_INCLUDE_LOGICAL := my_product my_engineering my_company my_carrier my_region my_heytap my_stock my_preload my_manifest
-
 
 # Debug flags
 TWRP_INCLUDE_LOGCAT := true
