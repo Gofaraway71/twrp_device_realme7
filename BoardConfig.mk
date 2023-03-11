@@ -38,7 +38,7 @@ BOARD_AVB_RECOVERY_ADD_HASH_FOOTER_ARGS += \
     --prop com.android.build.boot.security_patch:$(PLATFORM_SECURITY_PATCH)
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := begonia
+TARGET_BOOTLOADER_BOARD_NAME := mt6785
 TARGET_NO_BOOTLOADER := true
 
 # File # File systems
@@ -103,9 +103,7 @@ TW_USE_FSCRYPT_POLICY := 1
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_RECOVERY_DEVICE_DIRS += $(DEVICE_PATH)
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
-
 # TWRP Configuration
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
 RECOVERY_SDCARD_ON_DATA := true
 TW_DEVICE_VERSION := 4
 TW_THEME := portrait_hdpi
@@ -113,6 +111,7 @@ TW_Y_OFFSET := 80
 TW_H_OFFSET := -80
 TW_EXTRA_LANGUAGES := true
 TW_SCREEN_BLANK_ON_BOOT := true
+TW_NO_SCREEN_BLANK := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_MAX_BRIGHTNESS := 2047
@@ -122,47 +121,10 @@ TW_INCLUDE_NTFS_3G := true
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
-TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone4/temp
+TW_CUSTOM_CPU_TEMP_PATH := /sys/class/power_supply/battery/temp
+TW_INCLUDE_LOGICAL := my_product my_engineering my_company my_carrier my_region my_heytap my_stock my_preload my_manifest
+
 
 # Debug flags
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
-
-#SHRP-specific lines
-SHRP_PATH := device/xiaomi/begonia
-SHRP_MAINTAINER := SHADOW
-SHRP_DEVICE_CODE := begonia
-SHRP_OFFICIAL := false
-SHRP_EDL_MODE := 1
-SHRP_INTERNAL := /sdcard
-SHRP_EXTERNAL := /external_sd
-SHRP_OTG := /usb_otg
-SHRP_FLASH := 1
-SHRP_FLASH_MAX_BRIGHTNESS := 2074
-SHRP_REC_TYPE := SAR
-SHRP_REC := /dev/block/bootdevice/by-name/recovery
-SHRP_DEVICE_TYPE := A_Only
-SHRP_EXPRESS := true
-SHRP_EXPRESS_USE_DATA := true
-SHRP_DARK := true
-SHRP_NOTCH := true
-INC_IN_REC_ADDON_1 := true
-INC_IN_REC_ADDON_2 := true
-INC_IN_REC_ADDON_3 := true
-INC_IN_REC_ADDON_4 := true
-INC_IN_REC_MAGISK := true
-SHRP_CUSTOM_FLASHLIGHT := true
-SHRP_FONP_1 := /sys/class/leds/torch-light0/brightness
-SHRP_FONP_2 := /sys/class/leds/torch-light1/brightness
-SHRP_FONP_3 := /sys/class/leds/torch-light2/brightness
-#SHRP_STATUSBAR_RIGHT_PADDING := <1-XXX>
-#SHRP_STATUSBAR_LEFT_PADDING := <1-XXX>
-
-#SHRP Addons
-#SHRP_EXTERNAL_ADDON_PATH := "$(DEVICE_PATH)/addons/"
-#SHRP_EXTERNAL_ADDON_1_NAME := "LOS Recorder"
-#SHRP_EXTERNAL_ADDON_1_INFO := "A magisk module which add lineageOS recorder into your system"
-#SHRP_EXTERNAL_ADDON_1_FILENAME := "los_recorder.zip"
-#SHRP_EXTERNAL_ADDON_1_BTN_TEXT := "Install"
-#SHRP_EXTERNAL_ADDON_1_SUCCESSFUL_TEXT := "Installed"
-#SHRP_INC_IN_REC_EXTERNAL_ADDON_1 := true
