@@ -41,6 +41,9 @@ BOARD_AVB_RECOVERY_ADD_HASH_FOOTER_ARGS += \
 TARGET_BOOTLOADER_BOARD_NAME := mt6785
 TARGET_NO_BOOTLOADER := true
 
+# Workaround for error copying vendor files to recovery ramdisk
+TARGET_COPY_OUT_VENDOR := vendor
+
 # File systems
 
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 102760448
